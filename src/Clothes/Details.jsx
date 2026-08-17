@@ -8,99 +8,99 @@ import useCounterStore from "../CounterStore/Store";
 const Products = [
   {
     id: 1,
-    name: "لباس ورزشی",
+    name: "Sportswear",
     img: Photo1,
     price: 300,
     quantity: 1,
-    details: "the brand is nike",
+    details: "The brand is Nike",
   },
   {
     id: 2,
-    name: "لباس ورزشی",
+    name: "Sportswear",
     img: Photo2,
     price: 300,
     quantity: 1,
-    details: "the brand is adidass",
+    details: "The brand is Adidas",
   },
   {
     id: 3,
-    name: "لباس ورزشی",
+    name: "Sportswear",
     img: Photo3,
     price: 300,
     quantity: 1,
-    details: "the brand is puma",
+    details: "The brand is Puma",
   },
   {
     id: 4,
-    name: "لباس ورزشی",
+    name: "Sportswear",
     img: Photo1,
     price: 300,
     quantity: 1,
-    details: "the brand is nike",
+    details: "The brand is Nike",
   },
   {
     id: 5,
-    name: "کفش ورزشی",
+    name: "Sports Shoes",
     img: Photo2,
     price: 300,
     quantity: 1,
-    details: "the brand is puma",
+    details: "The brand is Puma",
   },
   {
     id: 6,
-    name: "لباس ورزشی",
+    name: "Sportswear",
     img: Photo3,
     price: 300,
     quantity: 1,
-    details: "the brand is puma",
+    details: "The brand is Puma",
   },
   {
     id: 7,
-    name: "لباس ورزشی",
+    name: "Sportswear",
     img: Photo1,
     price: 300,
     quantity: 1,
-    details: "the brand is puma",
+    details: "The brand is Puma",
   },
   {
     id: 8,
-    name: "کفش ورزشی",
+    name: "Sports Shoes",
     img: Photo2,
     price: 300,
     quantity: 1,
-    details: "the brand is puma",
+    details: "The brand is Puma",
   },
   {
     id: 9,
-    name: "لباس ورزشی",
+    name: "Sportswear",
     img: Photo3,
     price: 300,
     quantity: 1,
-    details: "the brand is addisa",
+    details: "The brand is Adidas",
   },
   {
     id: 10,
-    name: "لباس ورزشی",
+    name: "Sportswear",
     img: Photo1,
     price: 300,
     quantity: 1,
-    details: "the brand is abibas",
+    details: "The brand is Adidas",
   },
   {
     id: 11,
-    name: "کفش ورزشی",
+    name: "Sports Shoes",
     img: Photo2,
     price: 300,
     quantity: 1,
-    details: "the brand is puma",
+    details: "The brand is Puma",
   },
   {
     id: 12,
-    name: "لباس ورزشی",
+    name: "Sportswear",
     img: Photo3,
     price: 300,
     quantity: 1,
-    details: "the brand is nike",
+    details: "The brand is Nike",
   },
 ];
 
@@ -178,17 +178,17 @@ function Details() {
           <div className="flex justify-between items-center border-b border-slate-500 py-2.5 md:py-5">
             <h1 className="text-3xl font-bold">{product.name}</h1>
             <p className="text-gray-500 border rounded-2xl p-1.5 bg-purple-300/10">
-              کد : {product.id}
+              code : {product.id}
             </p>
           </div>
           <div className="border-b py-2.5 md:py-5">
             <p className="text-2xl text-purple-600 font-bold">
               {product.price} T
             </p>
-            <p className="leading-8 text-gray-700 bg-gray-400/10 border rounded-2xl p-2 mt-2">مشخصات محصول: <br/>{product.details}</p>
+            <p className="leading-8 text-gray-700 bg-gray-400/10 border rounded-2xl p-2 mt-2"> Product Details<br/>{product.details}</p>
           </div>
           <div className="flex flex-row justify-between py-2.5 md:py-5">
-            <p>تعداد محصول</p>
+            <p>Product Quantity</p>
           <div className="flex items-center justify-between bg-slate-900 border border-purple-500/30 rounded-xl p-1 w-32 shadow-sm">
           
             <button
@@ -228,13 +228,13 @@ function Details() {
                   d="M10 19l-7-7m0 0l7-7m-7 7h18"
                 />
               </svg>
-              <span>بازگشت</span>
+              <span>Back</span>
             </button>
             <button
               onClick={() => add({ ...product, quantity: count })}
               className="bg-purple-600 w-full hover:bg-purple-700 text-white py-3 rounded-xl transition active:scale-95"
             >
-              افزودن به سبد خرید
+            Add
             </button>
           </div>
           {message && <p>{message}</p>}

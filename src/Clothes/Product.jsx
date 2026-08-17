@@ -141,7 +141,6 @@ function Product() {
     <motion.dev
     initial={{opacity: 0 , y: 50 , scale: 0.9}}
     animate={{opacity : 1 , y : 0 , scale: 1}}
-    exit={{opacity : 0 , scale: 0.9 , y: -50}}
     transition={{duraction : 0.3}}
     className='fixed top-3 left-9 rounded-2xl p-4 bg-slate-400/30 border border-red-500/20 backdrop-blur-xl'
     >
