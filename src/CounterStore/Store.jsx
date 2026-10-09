@@ -1,67 +1,59 @@
 import { create } from "zustand";
-import { persist, createJSONStorage } from "zustand/middleware";
 
-const useCounterStore = create(
-  persist(
-    (set) => ({
-      cart: [],
-      message: [],
-      action: {
-        add: (product) => {
-          set((state) => {
-            const isExist = state.cart.find(
-              (item) => item.id === Number(product.id)
-            );
+const useCounterStore = create((set) => ({
+  cart: [],
+  message: [],
 
-            if (isExist) {
-              return {
-                message: "Already added to the cart",
-              };
-            }
+  action: {
+    add: (product) => {
+      set((state) => {
+        const isExist = state.cart.find(
+          (item) => item.id === Number(product.id)
+        );
 
-            return {
-              cart: [...state.cart, { ...product, number: 1 }],
-              message: "Added to the cart",
-            };
-          });
-        },
+        if (isExist) {
+          return {
+            message: "Already added to the cart",
+          };
+        }
 
-        reset: () => {
-          set(() => ({
-            message: [],
-          }));
-        },
+        return {
+          cart: [...state.cart, { ...product, number: 1 }],
+          message: "Added to the cart",
+        };
+      });
+    },
 
-        remove: (id) => {
-          set((state) => ({
-            cart: state.cart.filter((item) => item.id !== id),
-          }));
-        },
-      },
+    reset: () => {
+      set(() => ({
+        message: [],
+      }));
+    },
 
-      increase: (id) =>
-        set((state) => ({
-          cart: state.cart.map((item) =>
-            item.id === id
-              ? { ...item, number: (item.number || 1) + 1 }
-              : item
-          ),
-        })),
+    remove: (id) => {
+      set((state) => ({
+        cart: state.cart.filter((item) => item.id !== id),
+      }));
+    },
+  },
 
-      decrease: (id) =>
-        set((state) => ({
-          cart: state.cart.map((item) =>
-            item.id === id
-              ? { ...item, number: item.number - 1 }
-              : item
-          ),
-        })),
-    }),
-    {
-      name: "counter-storage",
-      storage: createJSONStorage(() => localStorage),
-    }
-  )
-);
+  increase: (id) =>
+    set((state) => ({
+      cart: state.cart.map((item) =>
+        item.id === id
+          ? { ...item, number: (item.number || 1) + 1 }
+          : item
+      ),
+    })),
+
+  decrease: (id) =>
+    set((state) => ({
+      cart: state.cart.map((item) =>
+        item.id === id
+          ? { ...item, number: item.number - 1 }
+          : item
+      ),
+    })),
+}));
 
 export default useCounterStore;

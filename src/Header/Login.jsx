@@ -14,7 +14,7 @@ function Login({ onClose }) {
     e.preventDefault();
 
     if (username.trim() === "" || password.trim() === "") {
-      alert("تمام فیلدها را پر کنید");
+      alert("Please fill in all the fields");
       return;
     }
     const fakeToken = "user_secret_token_12345";
